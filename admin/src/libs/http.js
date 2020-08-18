@@ -14,11 +14,11 @@ let HOST = ''
 Vue.prototype.$host = HOST
 
 axios.defaults.timeout = 5000
-if (process.env.NODE_ENV === 'production') {
-    axios.defaults.baseURL = 'http://47.92.27.99:3001'
-} else {
-    axios.defaults.baseURL = 'http://localhost:3001'
-}
+// if (process.env.NODE_ENV === 'production') {
+    // axios.defaults.baseURL = 'http://api.jiankou.top'
+// } else {
+//     axios.defaults.baseURL = 'http://localhost:3001'
+// }
 // axios.defaults.baseURL = HOST
 
 // http request

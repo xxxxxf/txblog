@@ -21,7 +21,7 @@
                     :format="['jpg','png','gif']"
                     type="drag"
                     :max-size="2048"
-                    action="http://47.92.27.99:3001/api/upload/fileds"
+                    action="/api/upload/fileds"
                     :on-success="handleUploadSuccess"
                     :on-format-error="handleUploadFormatError"
                     :on-exceeded-size="handleMaxSize"
@@ -144,7 +144,7 @@ export default {
                     }
                 }).then(res => {
                     const key = res.data.key
-                    const url = `http://qd71k3640.bkt.clouddn.com/${key}`
+                    const url = `http://qn.jiankou.top/${key}`
                     _this.$refs.md.$img2Url(pos, url)
                 })
             })

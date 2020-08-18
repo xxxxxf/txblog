@@ -1,5 +1,5 @@
 /**
- * @Author: wushuang
+ * @Author: 无双
  * @Last Modified by: wushuang
  * @Last Modified time: 2019-07-19 17:56:59
  */
@@ -16,6 +16,7 @@ Vue.prototype.$host = HOST
 axios.defaults.timeout = 5000
 // if (process.env.NODE_ENV === 'production') {
 //     axios.defaults.baseURL = 'http://47.92.27.99:3001'
+    // HOST = 'http://api.jiankou.top'
 // }
 // axios.defaults.baseURL = HOST
 

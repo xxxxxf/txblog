@@ -2,7 +2,7 @@
     <div class="footer">
         <div class="copy-right">
             <p>www.jiankou.top - 天行涧博客 Copyright© Author无双 544863848@qq.com</p>
-            <p>豫ICP备36803136</p>
+            <p>豫ICP备20024210</p>
         </div>
     </div>
 </template>

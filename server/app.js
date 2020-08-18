@@ -10,15 +10,6 @@ const path = require('path');
 const common = require('./app/libs/common');
 
 let server = new Koa()
-server.listen(config.port)
-
-server.use(body({
-    uploadDir: path.resolve(__dirname, './static/upload')
-}))
-
-// 如下两种写法都可以
-// server.use(static(path.resolve(__dirname, './static/')))
-server.use(static(__dirname + '/static/'))
 
 server.use(cors({
     origin: function (ctx) {
@@ -30,6 +21,19 @@ server.use(cors({
     allowMethods: ['GET', 'POST', 'DELETE', 'OPTIONS', 'PUT'],
     allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
 }))
+
+
+server.listen(config.port)
+
+server.use(body({
+    uploadDir: path.resolve(__dirname, './static/upload')
+}))
+
+// 如下两种写法都可以
+// server.use(static(path.resolve(__dirname, './static/')))
+server.use(static(__dirname + '/static/'))
+
+
 /* 数据库连接并且挂载到context 对象上  */ 
 server.context.db = db;
 server.context.config = config;
@@ -56,6 +60,18 @@ router.use(async (ctx, next) => {
             ctx.body = common.handleResulte(101, '', '请登录')
         }
     }
+})
+
+router.use(async (ctx, next) => {
+  ctx.set("Access-Control-Allow-Origin", "*");
+  ctx.set("Content-Type", "application/json;charset=utf-8");
+  ctx.set("Access-Control-Allow-Methods", "GET, POST, PUT,OPTIONS");
+  ctx.set("Access-Control-Allow-Headers", "content-type");
+  if (ctx.request.method === 'OPTIONS') {
+    ctx.status = 200   
+  } else {
+    await next();
+  }
 })
 
 // 路由入口

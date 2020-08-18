@@ -126,7 +126,7 @@ export default {
                     }
                 }).then(res => {
                     const key = res.data.key
-                    const url = `http://qd71k3640.bkt.clouddn.com/${key}`
+                    const url = `http://qn.jiankou.top/${key}`
                     _this.$refs.md.$img2Url(pos, url)
                 })
             })

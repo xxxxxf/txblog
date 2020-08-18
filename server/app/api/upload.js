@@ -7,9 +7,8 @@ let router = new Router()
 const qiniu = require("qiniu");
 //客户端调用接口，生成token
 router.get('/qiniu', async ctx => {
-    // 用自己的七牛云Key
-    let accessKey = 'RkN04hhjswEmdBwur5G1SmYlqTR3BZaWc12bs6H';
-    let secretKey = 'SL0XC56q_wp2beHBmdIR0cvJT1YDSUWDU9o1-DN';
+    let accessKey = 'RkN04hhjswEmdBwur5G1SmYlqTR3BZaWc12bs6Hd';
+    let secretKey = 'SL0XC56q_wp2beHBmdIR0cvJT1YDSUWDU9o1-DNq';
     let mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
     let options = {
         scope: 'wusshuang' //七牛资源目录
