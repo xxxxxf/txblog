@@ -62,18 +62,6 @@ router.use(async (ctx, next) => {
     }
 })
 
-router.use(async (ctx, next) => {
-  ctx.set("Access-Control-Allow-Origin", "*");
-  ctx.set("Content-Type", "application/json;charset=utf-8");
-  ctx.set("Access-Control-Allow-Methods", "GET, POST, PUT,OPTIONS");
-  ctx.set("Access-Control-Allow-Headers", "content-type");
-  if (ctx.request.method === 'OPTIONS') {
-    ctx.status = 200   
-  } else {
-    await next();
-  }
-})
-
 // 路由入口
 // 登录注册接口
 router.use('/api/admin', require('./app/api/admin'));

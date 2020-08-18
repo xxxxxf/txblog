@@ -63,7 +63,7 @@ source /node-koa2-blog/config/yangblog.sql
 
 ### 克隆项目
 ```
-git cloen https://github.com/dadanihoutao/node-koa2-blog.git
+git cloen https://github.com/xxxxxf/txblog.git
 
 #切换到项根目录全局安装 supervisor 插件，此插件用来实时监听node代码并更新，类似前端webpack热重载，不用重启服务。安装命令如下
 npm install supervisor -g
